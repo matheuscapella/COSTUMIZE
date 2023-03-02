@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :pages do
-    resources :costumes
-  end
+  resources :pages
+  resources :costumes, only: [:index]
 end
