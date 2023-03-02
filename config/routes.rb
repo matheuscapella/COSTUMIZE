@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :costumes, only: [:show]
+  resources :pages
+  resources :costumes, only: [:new, :create, :show]
+
 end
