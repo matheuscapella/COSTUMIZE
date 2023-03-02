@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for(@costume) do |f| %>
+    <!-- [...] -->
+    <%= f.input :photo, as: :file %>
+    <!-- [...] -->
+  <% end %>
+
+  <%= simple_form_for(@costume) do |f| %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+</div>
