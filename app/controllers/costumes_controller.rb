@@ -6,7 +6,7 @@ class CostumesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @costume = Costume.find(params[:id])
   end
 
   def new
@@ -30,7 +30,7 @@ class CostumesController < ApplicationController
 # end
 
   def costume_params
-    params.require(:costume).permit(:owner_id, :price, :description)
+    params.require(:costume).permit(:user_id, :price, :description)
   end
 
   def article_params
