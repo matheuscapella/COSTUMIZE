@@ -17,7 +17,7 @@ class CostumesController < ApplicationController
     @costume = Costume.new(costume_params)
     @costume.user = current_user
     if @costume.save
-      redirect_to root_path
+      redirect_to costumes_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,10 +30,6 @@ class CostumesController < ApplicationController
 # end
 
   def costume_params
-    params.require(:costume).permit(:user_id, :price, :description)
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
+    params.require(:costume).permit(:user_id, :price, :description, :photo)
   end
 end
