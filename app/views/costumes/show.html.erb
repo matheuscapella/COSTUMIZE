@@ -1,8 +1,20 @@
 <%# <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill %>
+<body style = "background-color: #94b8b8">
+  <div class="container mt-5 text-center">
+    <h1>Costume Title</h1>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+      </div>
+    </div>
+      <h2>$<%= @costume.price %></h2>
+      <p><%= @costume.description %></p>
+    <div class="btn btn-primary">Reserve Costume
+    </div>
+  </div>
+  <div>
+    <% if @costume.user == current_user %>
 
-  <div class="container">
-    <p><%= @costume.price %></p>
+    <% end %>
   </div>
-  <div class="container">
-    <p><%= @costume.description %></p>
-  </div>
+</body>
