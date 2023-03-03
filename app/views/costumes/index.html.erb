@@ -1,8 +1,12 @@
-<h1>Costumize options</h1>
-<div class="card-costume">
-  <img src="https://i5.walmartimages.com/asr/3e554532-08cf-43b2-9a51-4492406df58c.a1ec02454e9fd75c1614c9e37c76b773.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" />
-  <div class="card-costume-infos">
-    <h2>Costume name</h2>
-    <p>Costume description with <strong>relevant info</strong> only.</p>
+ <h2>All Costumes</h2>
+<ol>
+  <% @costumes.each do |costume| %>
+    <li><%= costume.description %>
+        <%= costume.price %>
+
+    </li>
+    <%= cl_image_tag costume.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</ol>
   </div>
 </div>
