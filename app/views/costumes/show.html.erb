@@ -2,12 +2,12 @@
 <body style = "background-color: #94b8b8">
   <div class="container mt-5 text-center">
     <h1>Costume Title</h1>
-    <div class="col">
+    <div class="col d-flex justify-content-center">
       <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+       <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill%>
       </div>
     </div>
-      <h2>$<%= @costume.price %></h2>
+      <h2 class= mt-3>$<%= @costume.price %></h2>
       <p><%= @costume.description %></p>
     <div class="btn btn-primary">Reserve Costume
     </div>
