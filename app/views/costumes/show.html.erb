@@ -1,17 +1,22 @@
 <body style = "background-color: #94b8b8">
-  <div class="container mt-5 text-center">
-    <h1><%= @costume.title %></h1>
-    <div class="col">
+  <div class="container p-5 text-center">
+
+    <h1 class = "text-uppercase"><%= @costume.title %></h1>
+    <div class="col d-flex justify-content-center">
       <div class="card h-100">
-        <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill %>
+      <img src="http://www.clipartbest.com/cliparts/di7/o47/di7o478kT.png"
+            class="card-img-top" alt="" style="width:500px;height:600px;"/>
+       <%# <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
-      <h2 class = mt-3 >$<%= @costume.price %></h2>
+      <p class= mt-3><strong>$<%= @costume.price %></strong></p>
       <p><%= @costume.description %></p>
-  <%= simple_form_for [@costume, @booking], data: { controller: 'flatpickr' } do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
-    <%= f.submit 'Schedule your booking' %>
-  <% end %>
+    <div class="col pt-5 d-flex justify-content-center">
+      <%= simple_form_for [@costume, @booking], data: { controller: 'flatpickr' } do |f| %>
+      <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+      <%= f.submit 'Schedule your booking'%>
+      <% end %>
+    </div>
   </div>
 </body>
