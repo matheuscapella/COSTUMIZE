@@ -13,7 +13,7 @@
 
             <h5><%= costume.title %></h5>
             <p>$<%= costume.price %></p>
-            <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+            <%# <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
           </li>
         <% end %>
       </ul>
@@ -27,4 +27,3 @@
     <div class="mask flex-center rgba-blue-light">
     </div>
 </div> %>
-
