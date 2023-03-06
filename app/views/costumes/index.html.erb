@@ -1,4 +1,3 @@
-
 <body style = "background-color: #94b8b8">
   <div class="container">
     <h2 class = text-center>All Costumes</h2>
@@ -6,14 +5,16 @@
 
       <ul>
         <% @costumes.each do |costume| %>
-          <li>
+          <li class= "card m-5">
             <% if costume.photo.attached? %>
-              <%= cl_image_tag costume.photo.key, height: 500, width: 400 %>
+            <%=link_to costume_path(costume) do%>
+              <%= cl_image_tag costume.photo.key, height: 300, width: 200 %>
+              <%end%>
             <% end %>
 
             <h5><%= costume.title %></h5>
             <p>$<%= costume.price %></p>
-            <%# <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+            <%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
           </li>
         <% end %>
       </ul>
@@ -22,8 +23,30 @@
 </body>
 
 
+
 <%# <div class="view overlay">
     <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp" class="img-fluid " alt="smaple image">
     <div class="mask flex-center rgba-blue-light">
     </div>
+</div> %>
+
+<%# <div class="padded-boxes">
+    <section>
+        <h3 class="heading">Heading 1</h3>
+        <div class="padded">
+            <!-- box 1 content -->
+        </div>
+    </section>
+    <section>
+        <h3 class="heading">Heading 2</h3>
+        <div class="padded">
+            <!-- box 2 content -->
+        </div>
+    </section>
+    <section>
+        <h3 class="heading">Heading 3</h3>
+        <div class="padded">
+            <!-- box 3 content -->
+        </div>
+    </section>
 </div> %>
