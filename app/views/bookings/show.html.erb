@@ -3,12 +3,15 @@
     <div class="row d-flex justify-content-center">
       <div class="col-md-9 col-lg-7 col-xl-5">
         <div class="card">
-          <img src="http://www.clipartbest.com/cliparts/dc7/7Xd/dc77XdKc9.jpeg"
-            class="card-img-top" alt="" style="height:550px;"/>
+          <%= cl_image_tag @booking.costume.photo.key, class: "img-fluid"%>
+          <ul>Booked
+          <li><%= @booking.start_date%></li>
+          <li><%= @booking.end_date%></li>
+          </ul>
           <div class="card-body">
             <div class="card-title d-flex justify-content-between mb-0">
-              <p class="text-muted mb-0">Costume</p>
-              <p class="mb-0">$price</p>
+              <p class="mb-0"><%= @booking.costume.title %></p>
+              <p class="mb-0">$ <%= @booking.costume.price %></p>
             </div>
           </div>
           <div class="rounded-bottom" style="background-color: #eee;">

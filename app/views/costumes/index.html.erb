@@ -5,7 +5,10 @@
       <ul>
         <% @costumes.each do |costume| %>
           <li>
-            <%= cl_image_tag costume.photo.key, height: 300, width: 400, crop: :fill %>
+            <% if costume.photo.attached? %>
+              <%= cl_image_tag costume.photo.key, height: 500, width: 400 %>
+            <% end %>
+
             <h5><%= costume.title %></h5>
             <p>$<%= costume.price %></p>
           </li>
