@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :costumes, only: [:index, :new, :create, :show] do
     resources :bookings
   end
+  delete 'costumes/:id', to: 'costumes#destroy', as: 'delete'
 end

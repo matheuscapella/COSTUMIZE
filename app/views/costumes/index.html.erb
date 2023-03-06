@@ -1,12 +1,16 @@
  <h2>All Costumes</h2>
 <ol>
   <% @costumes.each do |costume| %>
+
     <li><%= costume.description %>
         <%= costume.price %>
+        <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 
     </li>
+    <%= link_to costume_path(costume) do %>
     <%= cl_image_tag costume.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
   <% end %>
 </ol>
-  </div>
-</div>
+<%= link_to "Create a New Costume", new_costume_path  %>
