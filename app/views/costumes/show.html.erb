@@ -1,7 +1,7 @@
 <%# <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill %>
 <body style = "background-color: #94b8b8">
   <div class="container mt-5 text-center">
-    <h1>Costume Title</h1>
+    <h1><%= @costume.title %></h1>
     <div class="col d-flex justify-content-center">
       <div class="card h-100">
        <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fill%>

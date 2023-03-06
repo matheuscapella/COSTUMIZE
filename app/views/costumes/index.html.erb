@@ -2,8 +2,7 @@
 <ol>
   <% @costumes.each do |costume| %>
 
-    <li><%= costume.description %>
-        <%= costume.price %>
+    <li><%= costume.title %>
         <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 
     </li>
