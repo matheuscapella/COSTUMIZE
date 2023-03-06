@@ -1,9 +1,11 @@
-<div class="container">
+<body style="background-color: #94b8b8;">
+<div class="container mt-5">
   <%= simple_form_for(@costume) do |f| %>
     <%= f.input :photo, as: :file %>
+    <%= f.input :title %>
     <%= f.input :price %>
-    <%= f.input :description %>
     <%= f.submit %>
   <% end %>
   <%= link_to "Back to Index", costumes_path  %>
 </div>
+</body>
