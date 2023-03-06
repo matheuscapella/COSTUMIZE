@@ -27,14 +27,3 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date)
   end
 end
-
-
-
-  # def update
-  #   @booking = Booking.find(params[:id])
-  #   if @booking.update(booking_params)
-  #     # redirect_to # up to you...
-  #   else
-  #     # render # where was the booking update form?
-  #   end
-  # end
