@@ -3,6 +3,7 @@
   <div class="container">
     <h2 class = text-center>All Costumes</h2>
 
+
       <ul>
         <% @costumes.each do |costume| %>
           <li>
@@ -12,6 +13,7 @@
 
             <h5><%= costume.title %></h5>
             <p>$<%= costume.price %></p>
+            <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
           </li>
         <% end %>
       </ul>
