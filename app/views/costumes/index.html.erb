@@ -1,15 +1,24 @@
- <h2>All Costumes</h2>
-<ol>
-  <% @costumes.each do |costume| %>
+<body style = "background-color: #94b8b8">
+  <div class="container">
+    <h2 class = text-center>All Costumes</h2>
+        <% @costumes.each do |costume| %>
+            <h5><%= costume.title %></h5>
+            <p>$<%= costume.price %></p>
+             <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+              <% if costume.photo.attached? %>
+              <%= link_to costume_path(costume) do %>
+              <%= cl_image_tag costume.photo.key, height: 500, width: 400 %>
+            <% end %>
+            <% end %>
+        <% end %>
+        <%= link_to "Create a new costume", new_costume_path  %>
 
-    <li><%= costume.title %>
-        <%= link_to 'Delete', delete_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+  </div>
+</body>
 
-    </li>
-    <%= link_to costume_path(costume) do %>
-    <%= cl_image_tag costume.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
 
-  <% end %>
-</ol>
-<%= link_to "Create a New Costume", new_costume_path  %>
+<%# <div class="view overlay">
+    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp" class="img-fluid " alt="smaple image">
+    <div class="mask flex-center rgba-blue-light">
+    </div>
+</div> %>
