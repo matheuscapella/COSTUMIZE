@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :pages
   resources :costumes, only: [:index, :new, :create, :show] do
-    resources :bookings
+    resources :bookings, only: [:new, :create]
   end
-  delete 'costumes/:id', to: 'costumes#destroy', as: 'delete'
 end
