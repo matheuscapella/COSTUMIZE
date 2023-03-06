@@ -32,8 +32,6 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
-
     params.require(:costume).permit(:user_id, :price, :title, :description, :photo)
-
   end
 end
