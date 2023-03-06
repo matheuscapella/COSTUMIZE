@@ -11,10 +11,13 @@
       <p><%= @costume.description %></p>
     <div class="btn btn-primary">Reserve Costume
     </div>
+      <br>
+        <%= link_to "Back to Index", costumes_path  %>
   </div>
   <div>
     <% if @costume.user == current_user %>
 
     <% end %>
+
   </div>
 </body>
