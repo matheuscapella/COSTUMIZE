@@ -1,16 +1,53 @@
 <body style = "background-color: #94b8b8">
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://abrakadabra.vteximg.com.br/arquivos/ids/264520/BANNER-THOR_LOVE_AND_THUNDER-ABRAKADABRA-DESKTOP_1920x450.jpg?v=637927982040670000" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://abrakadabra.vteximg.com.br/arquivos/ids/236952/banner_1920x450_harry.jpg?v=638035708102700000" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://abrakadabra.vteximg.com.br/arquivos/ids/234656/banner_1920x450_pantera.jpg?v=638035704612670000" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div style="text-align: -webkit-center;" class="mt-3">
+<h5>ENCONTRE AQUI</h5>
+ <h2>SUA FANTASIA IDEAL</h2>
+</div>
+
+
   <div class="container">
-    <h2 class = text-center>All Costumes</h2>
+    <div class="row">
         <% @costumes.each do |costume| %>
-            <h5><%= costume.title %></h5>
-            <p>$<%= costume.price %></p>
-             <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
-              <% if costume.photo.attached? %>
-              <%= link_to costume_path(costume) do %>
-              <%= cl_image_tag costume.photo.key, height: 500, width: 400 %>
-            <% end %>
-            <% end %>
+         <div class="col-4 mt-3">
+            <div class="card" style="width: 22rem;">
+              <%= cl_image_tag costume.photo.key, height: 400, width: 450, class:"card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= costume.title %></h5>
+                <p class="card-text"><%= costume.price %></p>
+                <%= link_to "More details", costume_path(costume)%>
+                <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+              </div>
+            </div>
+          </div>
+
+
+
+
         <% end %>
+
+    </div>
         <%= link_to "Create a new costume", new_costume_path  %>
 
   </div>
