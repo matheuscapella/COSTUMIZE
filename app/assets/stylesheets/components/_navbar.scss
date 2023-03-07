@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  // z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +11,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// .carousel-control-prev, .carousel-control-next {
+//   z-index: 0;
+//   top: 650px;
+// }
