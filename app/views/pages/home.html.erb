@@ -1,21 +1,21 @@
 <body style = "background-color: #142545">
 <h1 class= "pt-5 text-center text-uppercase fw-bolder text-white">Costumize</h1>
 
-<h4 class= "pb-5 text-center"><%= link_to "Rent your next costume here!", costumes_path, class: 'text-muted text-decoration-none' %></h4>
+<h4 class= "hover pb-5 text-center"><%= link_to "Rent your next costume here!", costumes_path, class: 'text-muted text-decoration-none' %></h4>
 
   <div id="carouselExampleFade" class="carousel slide carousel-fade pb-5 mb-5" data-bs-ride="carousel">
-    <div class="carousel-inner>
+    <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= image_tag 'venetian_mask.jpg', class: 'd-block w-100', alt: "First slide" %>
+        <%= image_tag 'venetian_mask.jpg', class: 'd-block w-100 img-carousel', alt: "First slide" %>
       </div>
       <div class="carousel-item">
-        <%= image_tag 'snow_white_crop.jpg', class: 'd-block w-100', alt: "Second slide"%>
+        <%= image_tag 'snow_white_crop.jpg', class: 'd-block w-100 img-carousel', alt: "Second slide"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag 'two_costumes.jpg', class: 'd-block w-100', alt: "Third slide"%>
+        <%= image_tag 'two_costumes.jpg', class: 'd-block w-100 img-carousel', alt: "Third slide"%>
       </div>
       <div class="carousel-item">
-        <%= image_tag 'dog_costumes.jpg', class: 'd-block w-100', alt: "Fourth slide"%>
+        <%= image_tag 'dog_costumes.jpg', class: 'd-block w-100 img-carousel ', alt: "Fourth slide"%>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
