@@ -3,7 +3,7 @@
   <div class="container py-5">
     <div class="row d-flex justify-content-center">
       <div class="col-md-9 col-lg-7 col-xl-5">
-        <div class="card border border-warning border-3">
+        <div class="card border border-success border-2">
           <h3 class= "text-center m-2 pt-2">You're almost there!</h3>
           <%= cl_image_tag @booking.costume.photo.key, class: "img-fluid"%>
           <p class= "ps-3 pt-2 mb-0 fs-5">Booking dates:</p>
@@ -41,7 +41,6 @@
                 </div>
               </div>
                <%=link_to "Submit Order", costumes_path, class: "btn btn-info"%>
-              <%# <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off">Submit Order</button> %>
             </div>
           </div>
         </div>

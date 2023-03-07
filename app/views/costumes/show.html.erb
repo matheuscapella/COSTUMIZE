@@ -2,7 +2,7 @@
   <div class="container p-5 text-center text-white">
     <h1 class = "text-uppercase"><%= @costume.title%></h1>
     <div class="col d-flex justify-content-center">
-      <div class="card h-100">
+      <div class="card h-100 border border-warning border-1">
        <%= cl_image_tag @costume.photo.key, height: 550, width: 400 %>
       </div>
     </div>
