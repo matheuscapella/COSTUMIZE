@@ -23,25 +23,25 @@
 
 <div style="text-align: -webkit-center;" class="mt-3 p-3 text-white">
 <h5>ENCONTRE AQUI</h5>
- <h2>SUA FANTASIA IDEAL</h2>
+ <h1>SUA FANTASIA IDEAL</h1>
 </div>
 
-
-  <div class="container">
-    <div class="row">
-        <% @costumes.each do |costume| %>
-         <div class="col-4 mt-3">
-            <div class="card" style="width: 22rem;">
-              <%= cl_image_tag costume.photo.key, height: 400, width: 450, class:"card-img-top" %>
-              <div class="card-body">
-                <h5 class="card-title"><%= costume.title %></h5>
-                <p class="card-text">$<%= costume.price %></p>
-                <%= link_to "More details", costume_path(costume)%>
-                <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+      <div class="container pb-5 mb-5">
+        <div class="row">
+            <% @costumes.each do |costume| %>
+            <div class="col-4 mt-3">
+                <div class="card" style="width: 22rem;">
+                  <%= cl_image_tag costume.photo.key, height: 400, width: 450, class:"card-img-top" %>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= costume.title %></h5>
+                    <p class="card-text"><%= costume.price %></p>
+                    <%= link_to "More details", costume_path(costume)%>
+                    <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        <% end %>
-    </div>
-  </div>
+            <% end %>
+        </div>
+      </div>
+
 </body>
