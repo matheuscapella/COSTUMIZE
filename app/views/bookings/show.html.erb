@@ -1,13 +1,14 @@
-<body style="background-color: #94b8b8;">
+<body style = "background-color: #142545">
+
   <div class="container py-5">
     <div class="row d-flex justify-content-center">
       <div class="col-md-9 col-lg-7 col-xl-5">
-        <div class="card">
+        <div class="card border border-warning border-3">
+          <h3 class= "text-center m-2 pt-2">You're almost there!</h3>
           <%= cl_image_tag @booking.costume.photo.key, class: "img-fluid"%>
-          <ul>Booked
-          <li><%= @booking.start_date%></li>
-          <li><%= @booking.end_date%></li>
-          </ul>
+          <p class= "ps-3 pt-2 mb-0 fs-5">Booking dates:</p>
+          <p class= "ps-3 fs-6"><%= @booking.start_date%> through <%= @booking.end_date%></p>
+
           <div class="card-body">
             <div class="card-title d-flex justify-content-between mb-0">
               <p class="mb-0"><%= @booking.costume.title %></p>
