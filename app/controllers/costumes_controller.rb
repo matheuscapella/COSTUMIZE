@@ -1,6 +1,7 @@
 class CostumesController < ApplicationController
   def index
     @costumes = Costume.all
+    binding.pry
   end
 
   def show
