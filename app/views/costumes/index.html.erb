@@ -34,7 +34,7 @@
                   <%= cl_image_tag costume.photo.key, height: 400, width: 450, class:"card-img-top" %>
                   <div class="card-body">
                     <h5 class="card-title"><%= costume.title %></h5>
-                    <p class="card-text"><%= costume.price %></p>
+                    <p class="card-text">$ <%= costume.price %></p>
                     <%= link_to "More details", costume_path(costume)%>
                     <p><%= link_to 'Delete', costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
                   </div>
